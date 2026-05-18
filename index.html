@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girl in Hell — 이상형 표</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* ════════════════════════════════════════
+   RESET & ROOT
+════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#FAF9F6;
+  --cream-dark:#F4F3EE;
+  --paper:#F4F3EE;
+  --ink:#1A1A1A;
+  --ink-mid:#444444;
+  --ink-light:#888888;
+  --ink-faint:#C0BDB5;
+  --red:#E63946;
+  --red-bright:#FF3333;
+  --red2:#C22D38;
+  --line:1px solid #1A1A1A;
+  --line-light:1px solid #D8D6D0;
+  --col-num:88px;
+  --pad-x:2.8rem;
+  --pad-y:2.2rem;
+}
+html,body{background:var(--paper);color:var(--ink);min-height:100%;}
+body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-size:13px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+.page{display:none;}
+.page.active{display:block;}
+.shell{max-width:840px;margin:0 auto;border-left:var(--line);border-right:var(--line);background:var(--cream);}
+ 
+/* ════════════════════════════════════════
+   LANDING
+════════════════════════════════════════ */
+.masthead{padding:1.6rem var(--pad-x) 0;border-bottom:var(--line);}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.2rem;border-bottom:var(--line-light);margin-bottom:1.2rem;}
+.masthead-kicker{font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mid);}
+.masthead-pill{background:var(--red);color:var(--cream);font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:4px 12px;}
+.masthead-ver{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.18em;color:var(--ink-light);}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;border-bottom:var(--line);min-height:320px;}
+.hero-left{padding:var(--pad-y) var(--pad-x);border-right:var(--line);display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-word{font-family:'DM Serif Display','Playfair Display',serif;font-size:clamp(88px,18vw,148px);line-height:.78;letter-spacing:-.04em;color:var(--ink);display:block;}
+.hero-word.italic{font-style:italic;color:var(--red);font-size:clamp(92px,19vw,156px);}
+.hero-word.outline{-webkit-text-stroke:2px var(--ink);color:transparent;font-size:clamp(80px,16vw,132px);margin-left:.06em;}
+.hero-right{padding:var(--pad-y) 2rem;display:flex;flex-direction:column;justify-content:space-between;}
+.hero-label{font-family:'Black Han Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);border-bottom:2px solid var(--red);padding-bottom:6px;margin-bottom:1.4rem;display:inline-block;}
+.hero-desc{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:12px;line-height:2;color:var(--ink-mid);font-weight:300;word-break:keep-all;}
+.hero-desc strong{font-family:'Black Han Sans',sans-serif;color:var(--ink);font-weight:700;font-size:13px;}
+.hero-desc .r{color:var(--red);}
+.hero-num{font-family:'Black Han Sans',sans-serif;font-size:clamp(96px,14vw,128px);line-height:.85;color:var(--cream-dark);letter-spacing:-.04em;user-select:none;text-align:right;}
+.story-row{display:grid;grid-template-columns:var(--col-num) 1fr;border-bottom:var(--line);}
+.story-row:last-child{border-bottom:none;}
+.story-num{display:flex;align-items:flex-start;justify-content:center;padding:2rem .75rem;border-right:var(--line);}
+.story-num-inner{font-family:'Black Han Sans',sans-serif;font-size:clamp(48px,8vw,64px);line-height:1;color:var(--red);}
+.story-content{padding:2rem var(--pad-x);}
+.story-tag{font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.6rem;}
+.story-head{font-family:'Black Han Sans',sans-serif;font-size:clamp(20px,4vw,26px);font-weight:900;color:var(--ink);margin-bottom:.9rem;line-height:1.2;letter-spacing:-.02em;}
+.story-text{font-size:12px;line-height:2.1;color:var(--ink-mid);font-weight:300;word-break:keep-all;font-family:'Space Grotesk','Noto Sans KR',sans-serif;}
+.story-text .hi{color:var(--ink);font-weight:500;}
+.story-text .r{color:var(--red);font-weight:500;}
+.land-cta{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;padding:1.8rem var(--pad-x);border-top:var(--line);background:var(--ink);}
+.land-cta-txt{font-family:'Black Han Sans',sans-serif;font-size:13px;color:#999;letter-spacing:.02em;font-weight:400;font-style:italic;}
+ 
+/* ════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════ */
+.btn{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:12px 28px;cursor:pointer;border:none;transition:background .12s,color .12s,border-color .12s;white-space:nowrap;}
+.btn-red{background:var(--red);color:var(--cream);}
+.btn-red:hover{background:var(--red-bright);}
+.btn-outline{background:transparent;color:var(--ink);border:var(--line);}
+.btn-outline:hover{background:var(--ink);color:var(--cream);}
+.btn-outline-inv{background:transparent;color:#666;border:1px solid #333;}
+.btn-outline-inv:hover{border-color:var(--red);color:var(--red);}
+.btn:active{opacity:.85;}
+ 
+/* ════════════════════════════════════════
+   SURVEY
+════════════════════════════════════════ */
+.s-topbar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:1.4rem;padding:1.1rem var(--pad-x);border-bottom:var(--line);position:sticky;top:0;z-index:100;background:var(--cream);}
+.s-logo{font-family:'Black Han Sans',sans-serif;font-size:22px;color:var(--red);letter-spacing:.02em;font-style:italic;line-height:1;}
+ 
+/* ── PROGRESS BAR & COUNT ── */
+.prog-wrap{display:flex;align-items:center;gap:.8rem;}
+.prog-track{flex:1;height:8px;background:var(--cream-dark);position:relative;border:var(--line);}
+.prog-bar{position:absolute;left:0;top:0;height:100%;background:var(--red);transition:width .5s cubic-bezier(0.4,0,0.2,1);}
+/* 숫자 표시: "answered / 26" */
+.prog-count{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:9px;font-weight:700;letter-spacing:.08em;
+  color:var(--ink-light);white-space:nowrap;min-width:46px;text-align:right;
+}
+.prog-count .answered{color:var(--red);}
+/* 퍼센트 숫자 (기존 유지) */
+.prog-num{font-family:'Black Han Sans',sans-serif;font-size:14px;color:var(--ink);letter-spacing:.02em;min-width:36px;text-align:right;}
+ 
+.s-head{display:grid;grid-template-columns:1.2fr .8fr;border-bottom:4px solid var(--ink);}
+.s-head-left{padding:3rem var(--pad-x) 2.4rem;border-right:var(--line);}
+.s-head-right{padding:2rem var(--pad-x);display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;}
+.s-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;}
+.s-title{font-family:'Black Han Sans',sans-serif;font-size:clamp(28px,5.5vw,46px);color:var(--ink);line-height:1.05;letter-spacing:-.01em;}
+.s-desc{font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--ink-light);font-weight:300;letter-spacing:.04em;margin-top:1.2rem;line-height:1.9;}
+.s-big-num{font-family:'Black Han Sans',sans-serif;font-size:clamp(120px,20vw,160px);line-height:.8;color:var(--cream-dark);letter-spacing:-.05em;user-select:none;}
+.s-big-label{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.2em;color:var(--ink-light);text-transform:uppercase;margin-top:.5rem;}
+ 
+/* ── QUESTION BLOCKS ── */
+.q-block{border-bottom:var(--line);}
+.q-head{display:grid;grid-template-columns:var(--col-num) 1fr 40px;align-items:stretch;cursor:pointer;user-select:none;transition:background .1s;min-height:72px;}
+.q-head:hover{background:var(--cream-dark);}
+.q-n-cell{display:flex;align-items:center;justify-content:center;border-right:var(--line);}
+.q-n{font-family:'Black Han Sans',sans-serif;font-size:clamp(40px,6vw,52px);color:var(--red);line-height:1;}
+/* completed question: number turns ink */
+.q-n.done{color:var(--ink);}
+.q-lbl{font-family:'Black Han Sans',sans-serif;font-size:clamp(15px,2.8vw,19px);font-weight:400;color:var(--ink);padding:1.4rem var(--pad-x);letter-spacing:-.01em;display:flex;align-items:center;}
+.q-arr{font-size:10px;color:var(--ink);margin-right:var(--pad-x);transition:transform .2s;font-family:'Space Grotesk',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.q-arr.open{transform:rotate(180deg);}
+/* check badge on label row */
+.q-check{
+  font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--red);
+  margin-left:.6rem;opacity:0;transition:opacity .2s;
+}
+.q-check.visible{opacity:1;}
+ 
+.q-body{display:none;border-top:var(--line-light);}
+.q-body.open{display:block;}
+.cols{display:grid;grid-template-columns:1fr 1fr;}
+.col-wrap{padding:1.6rem var(--pad-x) 1.8rem;}
+.col-wrap:first-child{border-right:var(--line);}
+.col-lbl{font-family:'Black Han Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;padding-bottom:8px;margin-bottom:1rem;border-bottom:2px solid;}
+.col-lbl.me{color:var(--red);border-color:var(--red);}
+.col-lbl.you{color:var(--ink);border-color:var(--ink);}
+ 
+/* ── CHECKBOXES ── */
+.opt-list{display:flex;flex-direction:column;gap:0;}
+.opt{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:flex-start;padding:7px 0;cursor:pointer;transition:background .08s;}
+.opt:hover{background:var(--cream-dark);}
+.opt input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;appearance:none;-webkit-appearance:none;pointer-events:none;}
+.opt-mark{width:18px;height:18px;border:1.5px solid var(--ink-faint);display:flex;align-items:center;justify-content:center;margin-top:1px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:transparent;transition:border-color .1s,background .1s,color .1s;user-select:none;flex-shrink:0;clip-path:circle(50% at 50% 50%);}
+.opt input:checked ~ .opt-mark{border-color:var(--red);background:var(--red);color:var(--cream);}
+.opt input:checked ~ .opt-mark::after{content:'v';font-size:10px;line-height:1;letter-spacing:0;text-transform:lowercase;color:var(--cream);}
+.opt.you .opt-mark{clip-path:none;}
+.opt.you input:checked ~ .opt-mark{border-color:var(--ink);background:var(--ink);}
+.opt.you input:checked ~ .opt-mark::after{content:'x';font-size:10px;color:var(--cream);}
+.opt-txt{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:12px;color:var(--ink-light);font-weight:300;line-height:1.65;word-break:keep-all;}
+.opt input:checked ~ .opt-mark ~ .opt-txt{color:var(--ink);font-weight:500;}
+.opt.you input:checked ~ .opt-mark ~ .opt-txt{color:var(--ink-mid);}
+ 
+.custom-inp{margin-top:14px;width:100%;font-size:11px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;padding:8px 0;border:none;border-bottom:1px solid var(--ink-light);background:transparent;color:var(--ink);outline:none;letter-spacing:.02em;font-weight:300;}
+.custom-inp::placeholder{color:var(--ink-faint);letter-spacing:.06em;font-size:10px;text-transform:uppercase;}
+.custom-inp:focus{border-bottom-color:var(--red);border-bottom-width:2px;padding-bottom:7px;}
+ 
+.sub-row{display:flex;justify-content:space-between;align-items:center;padding:2.2rem var(--pad-x) 3rem;border-top:var(--line);gap:1.5rem;background:var(--cream);}
+ 
+/* ════════════════════════════════════════
+   PROFILE POSTER
+════════════════════════════════════════ */
+.profile-wrap{max-width:600px;margin:0 auto;padding:2.4rem 1.6rem 4rem;background:var(--paper);}
+.profile-nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.4rem;border-bottom:var(--line);margin-bottom:2rem;}
+.profile-nav-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--red);letter-spacing:.02em;font-style:italic;}
+.poster{background:var(--cream);color:var(--ink);border:var(--line);position:relative;}
+.poster-inner{position:relative;}
+.poster-stripe{background:var(--ink);padding:.55rem 1.6rem;display:flex;align-items:center;justify-content:space-between;}
+.poster-stripe-brand{font-family:'DM Serif Display',serif;font-size:11px;letter-spacing:.2em;color:var(--red);font-style:italic;}
+.poster-stripe-ver{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.18em;color:#555;font-weight:400;}
+.poster-hero{display:grid;grid-template-columns:1fr auto;padding:1.8rem 1.6rem 1.4rem;border-bottom:4px solid var(--ink);gap:1rem;align-items:flex-end;}
+.poster-title{font-family:'DM Serif Display',serif;font-size:clamp(38px,9vw,58px);color:var(--ink);line-height:.88;letter-spacing:-.03em;margin-bottom:.4rem;}
+.poster-title .r{color:var(--red);}
+.poster-title .it{font-style:italic;}
+.poster-sub{font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.9rem;}
+.poster-meta-line{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
+.poster-meta-tag{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.14em;color:var(--ink-light);display:flex;align-items:center;gap:5px;}
+.poster-meta-dot{width:4px;height:4px;background:var(--red);display:inline-block;}
+.poster-gih{font-family:'DM Serif Display',serif;font-size:clamp(64px,12vw,88px);line-height:.82;color:var(--cream-dark);letter-spacing:-.04em;text-align:right;user-select:none;}
+.poster-sec{padding:1.4rem 1.6rem 0;}
+.poster-sec-hd{display:flex;align-items:center;gap:8px;margin-bottom:1rem;padding-bottom:6px;border-bottom:2px solid var(--ink);}
+.poster-sec-bar{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--ink);}
+.poster-sec-bar.red{color:var(--red);}
+.p-item{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E5E3DD;}
+.p-item:last-child{border-bottom:none;}
+.p-key{font-family:'Space Grotesk',sans-serif;font-size:8px;color:#BDBAB2;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.p-vals{display:flex;flex-wrap:wrap;gap:4px;}
+.p-tag{font-size:9px;font-weight:700;padding:3px 8px;font-family:'Space Grotesk',sans-serif;letter-spacing:.04em;}
+.p-tag.me{background:var(--ink);color:var(--cream);}
+.p-tag.you{background:var(--red);color:var(--cream);}
+.p-tag.empty{color:#BDBAB2;font-weight:300;font-style:italic;background:none;padding:0;}
+.poster-rule{height:1px;background:repeating-linear-gradient(90deg,var(--ink-light) 0,var(--ink-light) 3px,transparent 3px,transparent 8px);margin:1.4rem 1.6rem;opacity:.35;}
+.poster-footer{display:grid;grid-template-columns:1fr 1fr;border-top:4px solid var(--ink);margin-top:1.2rem;}
+.poster-footer-cell{padding:1rem 1.6rem;display:flex;align-items:center;}
+.poster-footer-cell:first-child{border-right:var(--line);}
+.poster-footer-brand{font-family:'DM Serif Display',serif;font-size:14px;color:var(--ink-mid);font-style:italic;}
+.poster-footer-date{font-family:'Space Grotesk',sans-serif;font-size:8px;color:var(--ink-light);letter-spacing:.14em;font-weight:400;text-align:right;width:100%;}
+.save-btn{width:100%;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:16px;background:var(--ink);color:var(--cream);border:none;cursor:pointer;transition:background .15s;}
+.save-btn:hover{background:var(--red);}
+.save-btn:active{opacity:.9;}
+.save-btn:disabled{opacity:.4;cursor:not-allowed;}
+ 
+/* ════════════════════════════════════════
+   SNS FOOTER
+════════════════════════════════════════ */
+.sns-footer{border-top:3px solid var(--ink);background:var(--cream);}
+.sns-footer-bar{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1rem;padding:.95rem var(--pad-x) 1rem;border-bottom:var(--line);}
+.sns-footer-title{font-family:'DM Serif Display',serif;font-size:15px;font-style:italic;color:var(--red);letter-spacing:.02em;}
+.sns-footer-tag{font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-light);}
+.sns-footer-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.sns-cell{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;padding:1.25rem var(--pad-x) 1.5rem;border-right:var(--line);text-decoration:none;color:inherit;transition:background .1s;min-height:0;}
+.sns-cell:last-child{border-right:none;}
+.sns-cell:hover{background:var(--cream-dark);}
+.sns-glyph{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:var(--line);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--red);flex-shrink:0;}
+.sns-kind{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);}
+.sns-id{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:11px;color:var(--ink-mid);font-weight:400;line-height:1.45;word-break:break-all;}
+ 
+/* ════════════════════════════════════════
+   MOBILE
+════════════════════════════════════════ */
+@media(max-width:600px){
+  :root{--col-num:64px;--pad-x:1.2rem;--pad-y:1.6rem;}
+  .hero-grid,.s-head{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .s-head-right{display:none;}
+  .cols{grid-template-columns:1fr;}
+  .col-wrap:first-child{border-right:none;border-bottom:var(--line);}
+  .shell{border-left:none;border-right:none;}
+  .s-topbar{grid-template-columns:auto 1fr auto;gap:.8rem;}
+  .s-topbar .btn-outline-inv{display:none;}
+  .hero-word{font-size:clamp(64px,22vw,96px);}
+  .hero-word.italic{font-size:clamp(68px,23vw,100px);}
+  .sns-footer-grid{grid-template-columns:1fr;}
+  .sns-cell{border-right:none;border-bottom:var(--line);}
+  .sns-cell:last-child{border-bottom:none;}
+  /* topbar on mobile: just logo + progress + pct */
+  .prog-count{display:none;}
+}
+</style>
+</head>
+<body>
+ 
+<!-- ════ LANDING ════ -->
+<div class="page active" id="pg-land">
+<div class="shell">
+  <div class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-kicker">걸인헬 — Girl in Hell</span>
+      <span class="masthead-ver">2026 간단 ver.</span>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:1.2rem;">
+      <span class="masthead-kicker" style="color:var(--ink-light);letter-spacing:.16em;">성소수자 여성 이상형 표</span>
+      <span class="masthead-pill">이상형 표</span>
+    </div>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="hero-word">GIRL</span>
+      <span class="hero-word outline">IN</span>
+      <span class="hero-word italic">HELL</span>
+    </div>
+    <div class="hero-right">
+      <div>
+        <div class="hero-label">About</div>
+        <p class="hero-desc">
+          두 쌍의 커플, 그리고 네 명의 친구들.<br>
+          우리는 서로를 만나 살아남았고,<br>
+          웃었고, 버틸 수 있었습니다.<br><br>
+          <strong>"우리 같은 사람들이<br>서로를 만날 수 있었으면 좋겠다."</strong><br><br>
+          &lt;걸인헬&gt;은 성소수자 여성 넷의<br>
+          작은 바람에서 시작되었습니다.
+        </p>
+      </div>
+      <div class="hero-num">01</div>
+    </div>
+  </div>
+  <div class="story-row">
+    <div class="story-num"><span class="story-num-inner">01</span></div>
+    <div class="story-content">
+      <div class="story-tag">Mission</div>
+      <div class="story-head">우리가 꿈꾸는 연결</div>
+      <div class="story-text">
+        누군가는 사랑을 만나고, 누군가는 친구를 만나고,<br>
+        누군가는 처음으로 자기 자신을 숨기지 않아도 되는 시간을 만나게 하고 싶었습니다.<br>
+        로맨스와 우정, 동료애와 농담, 취향과 외로움까지—<br>
+        그 모든 연결이 자연스럽게 피어날 수 있도록.
+      </div>
+    </div>
+  </div>
+  <div class="story-row">
+    <div class="story-num"><span class="story-num-inner">02</span></div>
+    <div class="story-content">
+      <div class="story-tag">Future</div>
+      <div class="story-head">우리가 향하는 곳</div>
+      <div class="story-text">
+        내가 <span class="r">'나'</span>로 존재할 수 있는 곳, 우리만의 쓰껄한 지옥을 꿈꿉니다.<br>
+        머지않은 3년 뒤 홍대의 어느 거리에서— <span class="r">붉은 도장 같은 간판</span>에 불을 밝히고<br>
+        여러분께 다정한 인사를 건넬 날을 기다리고 있어요.
+      </div>
+    </div>
+  </div>
+  <div class="land-cta">
+    <span class="land-cta-txt">나와 맞는 인연을 찾아보세요.</span>
+    <button class="btn btn-red" onclick="go('pg-survey')">이상형 표 작성하기 →</button>
+  </div>
+  <footer class="sns-footer">
+    <div class="sns-footer-bar">
+      <span class="sns-footer-title">Girl in Hell</span>
+      <span class="sns-footer-tag">Contact &amp; SNS</span>
+    </div>
+    <nav class="sns-footer-grid">
+      <a class="sns-cell" href="mailto:girlinhell.kr@gmail.com">
+        <span class="sns-glyph">G</span>
+        <span class="sns-kind">Google</span>
+        <span class="sns-id">girlinhell.kr@gmail.com</span>
+      </a>
+      <a class="sns-cell" href="https://www.instagram.com/girlinhell.kr/" target="_blank" rel="noopener noreferrer">
+        <span class="sns-glyph">IG</span>
+        <span class="sns-kind">Instagram</span>
+        <span class="sns-id">@girlinhell.kr</span>
+      </a>
+      <a class="sns-cell" href="https://x.com/girlinhell_kr" target="_blank" rel="noopener noreferrer">
+        <span class="sns-glyph">X</span>
+        <span class="sns-kind">X (Twitter)</span>
+        <span class="sns-id">@girlinhell_kr</span>
+      </a>
+    </nav>
+  </footer>
+</div>
+</div>
+ 
+<!-- ════ SURVEY ════ -->
+<div class="page" id="pg-survey">
+<div class="shell">
+  <div class="s-topbar">
+    <span class="s-logo">GiH</span>
+    <!-- progress bar + counts in one flex group -->
+    <div class="prog-wrap">
+      <div class="prog-track"><div class="prog-bar" id="prog"></div></div>
+      <span class="prog-count" id="prog-count"><span class="answered" id="prog-done">0</span> / 26</span>
+    </div>
+    <span class="prog-num" id="prog-pct">0%</span>
+    <button class="btn btn-outline-inv" onclick="go('pg-land')" style="padding:7px 14px;font-size:9px;">← 뒤로</button>
+  </div>
+  <div class="s-head">
+    <div class="s-head-left">
+      <div class="s-eyebrow">2026 간단 ver. — Girl in Hell</div>
+      <div class="s-title">성소수자 여성<br>이상형 표</div>
+      <div class="s-desc">해당하는 항목을 모두 선택해 주세요.<br>복수 선택 · 직접 입력 가능합니다.<br><br>
+        <span style="font-size:10px;letter-spacing:.06em;color:var(--ink-faint);">
+          — 나에 대한 항목(13) + 원하는 상대 항목(13) = 총 26칸
+        </span>
+      </div>
+    </div>
+    <div class="s-head-right">
+      <div class="s-big-num">13</div>
+      <div class="s-big-label">문항</div>
+    </div>
+  </div>
+  <div id="qs"></div>
+  <div class="sub-row">
+    <button class="btn btn-outline" onclick="go('pg-land')">← 처음으로</button>
+    <button class="btn btn-red" onclick="submitSurvey()">카드 만들기 →</button>
+  </div>
+  <footer class="sns-footer">
+    <div class="sns-footer-bar">
+      <span class="sns-footer-title">Girl in Hell</span>
+      <span class="sns-footer-tag">Contact &amp; SNS</span>
+    </div>
+    <nav class="sns-footer-grid">
+      <a class="sns-cell" href="mailto:girlinhell.kr@gmail.com">
+        <span class="sns-glyph">G</span>
+        <span class="sns-kind">Google</span>
+        <span class="sns-id">girlinhell.kr@gmail.com</span>
+      </a>
+      <a class="sns-cell" href="https://www.instagram.com/girlinhell.kr/" target="_blank" rel="noopener noreferrer">
+        <span class="sns-glyph">IG</span>
+        <span class="sns-kind">Instagram</span>
+        <span class="sns-id">@girlinhell.kr</span>
+      </a>
+      <a class="sns-cell" href="https://x.com/girlinhell_kr" target="_blank" rel="noopener noreferrer">
+        <span class="sns-glyph">X</span>
+        <span class="sns-kind">X (Twitter)</span>
+        <span class="sns-id">@girlinhell_kr</span>
+      </a>
+    </nav>
+  </footer>
+</div>
+</div>
+ 
+<!-- ════ PROFILE ════ -->
+<div class="page" id="pg-profile">
+<div class="profile-wrap">
+  <div class="profile-nav">
+    <span class="profile-nav-logo">Girl in Hell</span>
+    <button class="btn btn-outline" onclick="go('pg-survey')" style="padding:7px 16px;font-size:9px;">← 다시 작성</button>
+  </div>
+  <div class="poster" id="poster">
+  <div class="poster-inner">
+    <div class="poster-stripe">
+      <span class="poster-stripe-brand">Girl in Hell ®</span>
+      <span class="poster-stripe-ver">2026 간단 ver.</span>
+    </div>
+    <div class="poster-hero">
+      <div>
+        <div class="poster-title">GIRL<br><span class="it r">IN</span><br>HELL</div>
+        <div class="poster-sub">성소수자 여성 이상형 표</div>
+        <div class="poster-meta-line">
+          <span class="poster-meta-tag"><span class="poster-meta-dot"></span>girl-in-hell.com</span>
+          <span class="poster-meta-tag"><span class="poster-meta-dot"></span><span id="p-date">—</span></span>
+        </div>
+      </div>
+      <div class="poster-gih">GiH</div>
+    </div>
+    <div class="poster-sec">
+      <div class="poster-sec-hd"><span class="poster-sec-bar red">저는 이런 사람이에요</span></div>
+      <div id="me-list"></div>
+    </div>
+    <div class="poster-rule"></div>
+    <div class="poster-sec" style="padding-bottom:1.4rem;">
+      <div class="poster-sec-hd"><span class="poster-sec-bar">이런 사람을 선호해요</span></div>
+      <div id="you-list"></div>
+    </div>
+    <div class="poster-footer">
+      <div class="poster-footer-cell"><span class="poster-footer-brand">걸인헬 — GiH</span></div>
+      <div class="poster-footer-cell"><span class="poster-footer-date" id="p-date2">—</span></div>
+    </div>
+  </div>
+  </div>
+  <button class="save-btn" id="save-btn" onclick="saveImage()">이미지로 저장하기 ↓</button>
+  <footer class="sns-footer">
+    <div class="sns-footer-bar">
+      <span class="sns-footer-title">Girl in Hell</span>
+      <span class="sns-footer-tag">Contact &amp; SNS</span>
+    </div>
+    <nav class="sns-footer-grid">
+      <a class="sns-cell" href="mailto:girlinhell.kr@gmail.com">
+        <span class="sns-glyph">G</span>
+        <span class="sns-kind">Google</span>
+        <span class="sns-id">girlinhell.kr@gmail.com</span>
+      </a>
+      <a class="sns-cell" href="https://www.instagram.com/girlinhell.kr/" target="_blank" rel="noopener noreferrer">
+        <span class="sns-glyph">IG</span>
+        <span class="sns-kind">Instagram</span>
+        <span class="sns-id">@girlinhell.kr</span>
+      </a>
+      <a class="sns-cell" href="https://x.com/girlinhell_kr" target="_blank" rel="noopener noreferrer">
+        <span class="sns-glyph">X</span>
+        <span class="sns-kind">X (Twitter)</span>
+        <span class="sns-id">@girlinhell_kr</span>
+      </a>
+    </nav>
+  </footer>
+</div>
+</div>
+ 
+<script>
+/* ════════════════════════════════════════════════
+   QUESTION DATA
+════════════════════════════════════════════════ */
+const Qs=[
+  {label:"나이 차이",
+   me:["99살이 되어도 100살 언니를 찾으러","동갑만 만날래요","연하의 맛 tv. 오직 연하만","연상이 좋지만 상관 없어요","연하가 좋지만 상관 없어요","동갑 이상만요","동갑 이하만요","나이 차이가 많이 나지만 않으면 상관 없어요","사랑에 나이가 있나요"],
+   you:["언니 소리 잘 하는 연하였으면","편한 동갑이었으면","제 언니가 되어주세요","연하지만 대들어 줘","설레는 동갑이 좋아","나이는 상관 없어하면 좋겠어요"]},
+  {label:"깁텍 성향",
+   me:["온깁 (사랑은 주는 거니까)","깁앤텍 (바~로 이맛 아입니까)","온텍 (take도 재능이다.)","깁이 더 강해요","텍이 더 강해요","내 여자를 위해서라면 조율 가능"],
+   you:["온깁 (사랑은 주는 거니까)","깁앤텍 (바~로 이맛 아입니까)","온텍 (take도 재능이다.)","깁이 더 강했으면","텍이 더 강했으면","내 여자를 위해서라면 조율 가능"]},
+  {label:"머리 길이",
+   me:["가슴 넘는 긴머리예요","쇄골 넘어가는 긴머리예요","중단발이에요","단발이에요","둥근 숏컷이에요","짧머 입니다","붙였다 뗐다 해요"],
+   you:["가슴 넘는 긴머리가 좋아요","쇄골 이상이면 돼요","중단발 이상이면 돼요","단발 이상이면 돼요","둥근 숏컷이상이면 돼요","짧머가 좋아요","머리 길이는 상관 없어요"]},
+  {label:"지역/거리",
+   me:["서울","수도권","강원도","충청도","전라도","경상도","제주도"],
+   you:["30분 이내 거리가 좋아요","1시간 이내 거리가 좋아요","롱디도 상관 없어요","장거리도 가능해요","서울권이면 좋겠어요","수도권이면 좋겠어요","강원도면 좋겠어요","충청도면 좋겠어요","전라도면 좋겠어요","경상도면 좋겠어요","제주도면 좋겠어요"]},
+  {label:"MBTI",
+   me:["E","I","N","S","F","T","P","J","모르겠어요","비밀이에요"],
+   you:["E","I","N","S","F","T","P","J","몰라도 돼요","상관 없어요"]},
+  {label:"체형",
+   me:["비밀이에요","정상 체중","마른","보통통","통통","통통 이상"],
+   you:["마른 체형을 선호해요","정상 체중이면 돼요","통통 이하가 좋아요","통통 이상이 좋아요","체형은 상관 없어요"]},
+  {label:"연락 빈도",
+   me:["걱정 안 시켜요","일이 바빠서 근무 시간엔 어려워요","30분 이내로 칼답해요","1-2시간 안으로 답해요","3-4시간 이내","하루에 3번 정도 핑퐁해요"],
+   you:["생존 신고만 가능하면 돼요","칼답 원해요","1시간 안으로 답해주세요","바쁠 때는 못해도 돼요","하루에 3번 정도는 핑퐁 해주세요"]},
+  {label:"선호 연락",
+   me:["전화 좋아해요","메신저가 편해요","전화/문자 둘 다 좋아요","상관 없어요"],
+   you:["전화 좋아했으면 좋겠어요","메신저를 더 편해했으면 좋겠어요","전화/메신저 둘 다 가능했으면 좋겠어요","상관 없어요"]},
+  {label:"흡연 여부",
+   me:["기차 나갑니다 뿌뿌 (헤비 스모커)","연초만 펴요","전담만 펴요","연초/전담 둘 다 펴요","내 여자가 끊으라면 끊을 수 있어요"],
+   you:["같이 흡연 가능한 사람이 좋아요","비흡연자 선호해요","비흡연자만 만나요","끊을 수 있는 사람이 좋아요","상관 없어요","전담까진 괜찮아요"]},
+  {label:"취미",
+   me:["운동","산책","명상","음악","요리","뜨개질","게임","영화","독서","술","친구"],
+   you:["상관 없어요","같이 할 수 있는 취미가 있었으면","달라도 좋아요"]},
+  {label:"얼굴상",
+   me:["두부상이래요","두부 모서리상이에요","토끼상","늑대상","여우상","고양이상","강아지상","아랍상","모르겠어요"],
+   you:["두부상","두부 모서리상","토끼상","늑대상","여우상","고양이상","강아지상","아랍상","상관 없어요"]},
+  {label:"쌍커풀",
+   me:["무쌍이에요","얇은 속쌍이에요","쌍커풀 있어요","쌍커풀 진해요","비밀이에요"],
+   you:["무쌍 좋아해요","얇은 속쌍 좋아해요","쌍커풀 좋아해요","쌍커풀 진한 거 좋아해요","상관 없어요"]},
+  {label:"오프",
+   me:["빠른 오프가 좋아요","천천히 알아가봐요","연락하며 정해봐요","당장 오늘도 가능해요","상관 없어요"],
+   you:["빠른 오프 원해요","연락하며 정해도 괜찮아요","상관 없어요","천천히 알아가봐요"]},
+];
+ 
+/* ════════════════════════════════════════════════
+   PROGRESS — 총 26칸 (13 me + 13 you)
+   각 (문항 × 사이드) 조합을 하나의 칸으로 취급.
+   그 칸에서 체크박스 1개 이상 OR 직접입력 → 완료.
+   완료된 칸 수 / 26 = 진행률
+════════════════════════════════════════════════ */
+const TOTAL_SLOTS = Qs.length * 2; // 13 × 2 = 26
+ 
+const allCbs = [];
+const customInps = [];
+ 
+function updateProg() {
+  let doneCount = 0;
+ 
+  Qs.forEach((q, i) => {
+    ['me', 'you'].forEach(side => {
+      // 이 (문항 × 사이드)에 체크된 박스가 하나라도 있으면 완료
+      const hasCheck = allCbs.some(
+        c => c.dataset.q == i && c.dataset.side === side && c.checked
+      );
+      // 직접입력에 내용이 있어도 완료
+      const inp = customInps.find(
+        c => c.dataset.q == i && c.dataset.side === side
+      );
+      const hasText = inp && inp.value.trim().length > 0;
+ 
+      if (hasCheck || hasText) doneCount++;
+ 
+      // 문항 번호 색상 업데이트 (me + you 둘 다 완료 시 잉크색으로)
+      if (side === 'you') {
+        const meDone = allCbs.some(c => c.dataset.q == i && c.dataset.side === 'me' && c.checked)
+          || (customInps.find(c => c.dataset.q == i && c.dataset.side === 'me')?.value.trim().length > 0);
+        const youDone = hasCheck || hasText;
+        const numEl = document.getElementById('qn-' + i);
+        if (numEl) {
+          numEl.classList.toggle('done', meDone && youDone);
+        }
+      }
+    });
+  });
+ 
+  const pct = Math.round((doneCount / TOTAL_SLOTS) * 100);
+  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('prog-done').textContent = doneCount;
+}
+ 
+/* ════════════════════════════════════════════════
+   BUILD SURVEY
+════════════════════════════════════════════════ */
+const container = document.getElementById('qs');
+ 
+Qs.forEach((q, i) => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+ 
+  // header
+  const head = document.createElement('div');
+  head.className = 'q-head';
+ 
+  const nCell = document.createElement('div');
+  nCell.className = 'q-n-cell';
+  const nSpan = document.createElement('span');
+  nSpan.className = 'q-n';
+  nSpan.id = 'qn-' + i;
+  nSpan.textContent = String(i + 1).padStart(2, '0');
+  nCell.appendChild(nSpan);
+ 
+  const lbl = document.createElement('span');
+  lbl.className = 'q-lbl';
+  lbl.textContent = q.label;
+ 
+  const arr = document.createElement('span');
+  arr.className = 'q-arr';
+  arr.id = 'arr-' + i;
+  arr.textContent = '▼';
+ 
+  head.appendChild(nCell);
+  head.appendChild(lbl);
+  head.appendChild(arr);
+ 
+  head.addEventListener('click', () => {
+    const body = document.getElementById('body-' + i);
+    const a = document.getElementById('arr-' + i);
+    const open = body.classList.contains('open');
+    body.classList.toggle('open', !open);
+    a.classList.toggle('open', !open);
+  });
+ 
+  // body
+  const body = document.createElement('div');
+  body.className = 'q-body';
+  body.id = 'body-' + i;
+  if (i === 0) { body.classList.add('open'); arr.classList.add('open'); }
+ 
+  const cols = document.createElement('div');
+  cols.className = 'cols';
+ 
+  const mkCol = (opts, side) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'col-wrap';
+ 
+    const colLbl = document.createElement('div');
+    colLbl.className = 'col-lbl ' + (side === 'me' ? 'me' : 'you');
+    colLbl.textContent = side === 'me' ? '저는 이런 사람이에요' : '이런 사람을 선호해요';
+    wrap.appendChild(colLbl);
+ 
+    const list = document.createElement('div');
+    list.className = 'opt-list';
+ 
+    opts.forEach(o => {
+      const label = document.createElement('label');
+      label.className = 'opt' + (side === 'you' ? ' you' : '');
+ 
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.dataset.q = i;
+      cb.dataset.side = side;
+      cb.value = o;
+      cb.addEventListener('change', updateProg);
+      allCbs.push(cb);
+ 
+      const mark = document.createElement('span');
+      mark.className = 'opt-mark';
+ 
+      const txt = document.createElement('span');
+      txt.className = 'opt-txt';
+      txt.textContent = o;
+ 
+      label.appendChild(cb);
+      label.appendChild(mark);
+      label.appendChild(txt);
+      list.appendChild(label);
+    });
+ 
+    wrap.appendChild(list);
+ 
+    // direct text input
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.className = 'custom-inp';
+    inp.placeholder = '직접 입력';
+    inp.dataset.q = i;
+    inp.dataset.side = side;
+    inp.addEventListener('input', updateProg);
+    customInps.push(inp);
+    wrap.appendChild(inp);
+ 
+    return wrap;
+  };
+ 
+  cols.appendChild(mkCol(q.me, 'me'));
+  cols.appendChild(mkCol(q.you, 'you'));
+  body.appendChild(cols);
+ 
+  block.appendChild(head);
+  block.appendChild(body);
+  container.appendChild(block);
+});
+ 
+/* ════════════════════════════════════════════════
+   NAVIGATION
+════════════════════════════════════════════════ */
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+ 
+/* ════════════════════════════════════════════════
+   SUBMIT → PROFILE CARD
+════════════════════════════════════════════════ */
+function submitSurvey() {
+  const meList = document.getElementById('me-list');
+  const youList = document.getElementById('you-list');
+  meList.innerHTML = '';
+  youList.innerHTML = '';
+ 
+  Qs.forEach((q, i) => {
+    let meVals = allCbs
+      .filter(c => c.dataset.q == i && c.dataset.side === 'me' && c.checked)
+      .map(c => c.value);
+    let youVals = allCbs
+      .filter(c => c.dataset.q == i && c.dataset.side === 'you' && c.checked)
+      .map(c => c.value);
+ 
+    const meC = customInps.find(c => c.dataset.q == i && c.dataset.side === 'me')?.value.trim();
+    const youC = customInps.find(c => c.dataset.q == i && c.dataset.side === 'you')?.value.trim();
+    if (meC) meVals = [...meVals, meC];
+    if (youC) youVals = [...youVals, youC];
+ 
+    const mkRow = (vals, cls) => {
+      const row = document.createElement('div');
+      row.className = 'p-item';
+      const key = document.createElement('span');
+      key.className = 'p-key';
+      key.textContent = q.label;
+      const wrap = document.createElement('div');
+      wrap.className = 'p-vals';
+      if (!vals.length) {
+        const t = document.createElement('span');
+        t.className = 'p-tag empty';
+        t.textContent = '—';
+        wrap.appendChild(t);
+      } else {
+        vals.forEach(v => {
+          const t = document.createElement('span');
+          t.className = 'p-tag ' + cls;
+          t.textContent = v;
+          wrap.appendChild(t);
+        });
+      }
+      row.appendChild(key);
+      row.appendChild(wrap);
+      return row;
+    };
+ 
+    meList.appendChild(mkRow(meVals, 'me'));
+    youList.appendChild(mkRow(youVals, 'you'));
+  });
+ 
+  const now = new Date();
+  const ds = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}`;
+  document.getElementById('p-date').textContent = ds;
+  document.getElementById('p-date2').textContent = ds;
+  go('pg-profile');
+}
+ 
+/* ════════════════════════════════════════════════
+   SAVE IMAGE
+════════════════════════════════════════════════ */
+async function saveImage() {
+  const btn = document.getElementById('save-btn');
+  btn.textContent = '생성 중...';
+  btn.disabled = true;
+  try {
+    const el = document.getElementById('poster');
+    const canvas = await html2canvas(el, {
+      scale: 3,
+      useCORS: true,
+      backgroundColor: '#FAF9F6',
+      width: el.offsetWidth,
+      logging: false
+    });
+    const dataUrl = canvas.toDataURL('image/png');
+    const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      const w = window.open();
+      w.document.write(
+        `<html><head><title>걸인헬 이상형 표</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"></head>
+        <body style="margin:0;background:#1A1A1A;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:1rem;">
+        <img src="${dataUrl}" style="max-width:100%;display:block;" /></body></html>`
+      );
+    } else {
+      const a = document.createElement('a');
+      a.download = 'girl-in-hell-profile.png';
+      a.href = dataUrl;
+      a.click();
+    }
+  } catch (e) {
+    alert('저장에 실패했어요. 스크린샷을 이용해주세요.');
+  }
+  btn.textContent = '이미지로 저장하기 ↓';
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
+
+내가 위에 보낸 코드들을 기반으로 웹을 만들어줘.
