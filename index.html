@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-VG5010MST0');
 </script>
    <!-- Google Tag Manager -->
@@ -44,15 +43,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --pad-x:2.8rem;
   --pad-y:2.2rem;
 }
-html,body<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8GBXMW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->{background:var(--paper);color:var(--ink);min-height:100%;}
+html,body{background:var(--paper);color:var(--ink);min-height:100%;}
 body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-size:13px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 .page{display:none;}
 .page.active{display:block;}
 .shell{max-width:840px;margin:0 auto;border-left:var(--line);border-right:var(--line);background:var(--cream);}
- 
+
 /* ════════════════════════════════════════
    LANDING
 ════════════════════════════════════════ */
@@ -84,7 +80,7 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .story-text .r{color:var(--red);font-weight:500;}
 .land-cta{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;padding:1.8rem var(--pad-x);border-top:var(--line);background:var(--ink);}
 .land-cta-txt{font-family:'Black Han Sans',sans-serif;font-size:13px;color:#999;letter-spacing:.02em;font-weight:400;font-style:italic;}
- 
+
 /* ════════════════════════════════════════
    BUTTONS
 ════════════════════════════════════════ */
@@ -96,27 +92,18 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .btn-outline-inv{background:transparent;color:#666;border:1px solid #333;}
 .btn-outline-inv:hover{border-color:var(--red);color:var(--red);}
 .btn:active{opacity:.85;}
- 
+
 /* ════════════════════════════════════════
    SURVEY
 ════════════════════════════════════════ */
 .s-topbar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:1.4rem;padding:1.1rem var(--pad-x);border-bottom:var(--line);position:sticky;top:0;z-index:100;background:var(--cream);}
 .s-logo{font-family:'Black Han Sans',sans-serif;font-size:22px;color:var(--red);letter-spacing:.02em;font-style:italic;line-height:1;}
- 
-/* ── PROGRESS BAR & COUNT ── */
 .prog-wrap{display:flex;align-items:center;gap:.8rem;}
 .prog-track{flex:1;height:8px;background:var(--cream-dark);position:relative;border:var(--line);}
 .prog-bar{position:absolute;left:0;top:0;height:100%;background:var(--red);transition:width .5s cubic-bezier(0.4,0,0.2,1);}
-/* 숫자 표시: "answered / 26" */
-.prog-count{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px;font-weight:700;letter-spacing:.08em;
-  color:var(--ink-light);white-space:nowrap;min-width:46px;text-align:right;
-}
+.prog-count{font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--ink-light);white-space:nowrap;min-width:46px;text-align:right;}
 .prog-count .answered{color:var(--red);}
-/* 퍼센트 숫자 (기존 유지) */
 .prog-num{font-family:'Black Han Sans',sans-serif;font-size:14px;color:var(--ink);letter-spacing:.02em;min-width:36px;text-align:right;}
- 
 .s-head{display:grid;grid-template-columns:1.2fr .8fr;border-bottom:4px solid var(--ink);}
 .s-head-left{padding:3rem var(--pad-x) 2.4rem;border-right:var(--line);}
 .s-head-right{padding:2rem var(--pad-x);display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;}
@@ -125,25 +112,17 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .s-desc{font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--ink-light);font-weight:300;letter-spacing:.04em;margin-top:1.2rem;line-height:1.9;}
 .s-big-num{font-family:'Black Han Sans',sans-serif;font-size:clamp(120px,20vw,160px);line-height:.8;color:var(--cream-dark);letter-spacing:-.05em;user-select:none;}
 .s-big-label{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.2em;color:var(--ink-light);text-transform:uppercase;margin-top:.5rem;}
- 
+
 /* ── QUESTION BLOCKS ── */
 .q-block{border-bottom:var(--line);}
 .q-head{display:grid;grid-template-columns:var(--col-num) 1fr 40px;align-items:stretch;cursor:pointer;user-select:none;transition:background .1s;min-height:72px;}
 .q-head:hover{background:var(--cream-dark);}
 .q-n-cell{display:flex;align-items:center;justify-content:center;border-right:var(--line);}
 .q-n{font-family:'Black Han Sans',sans-serif;font-size:clamp(40px,6vw,52px);color:var(--red);line-height:1;}
-/* completed question: number turns ink */
 .q-n.done{color:var(--ink);}
 .q-lbl{font-family:'Black Han Sans',sans-serif;font-size:clamp(15px,2.8vw,19px);font-weight:400;color:var(--ink);padding:1.4rem var(--pad-x);letter-spacing:-.01em;display:flex;align-items:center;}
 .q-arr{font-size:10px;color:var(--ink);margin-right:var(--pad-x);transition:transform .2s;font-family:'Space Grotesk',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;}
 .q-arr.open{transform:rotate(180deg);}
-/* check badge on label row */
-.q-check{
-  font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--red);
-  margin-left:.6rem;opacity:0;transition:opacity .2s;
-}
-.q-check.visible{opacity:1;}
- 
 .q-body{display:none;border-top:var(--line-light);}
 .q-body.open{display:block;}
 .cols{display:grid;grid-template-columns:1fr 1fr;}
@@ -152,8 +131,6 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .col-lbl{font-family:'Black Han Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;padding-bottom:8px;margin-bottom:1rem;border-bottom:2px solid;}
 .col-lbl.me{color:var(--red);border-color:var(--red);}
 .col-lbl.you{color:var(--ink);border-color:var(--ink);}
- 
-/* ── CHECKBOXES ── */
 .opt-list{display:flex;flex-direction:column;gap:0;}
 .opt{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:flex-start;padding:7px 0;cursor:pointer;transition:background .08s;}
 .opt:hover{background:var(--cream-dark);}
@@ -167,38 +144,48 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .opt-txt{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:12px;color:var(--ink-light);font-weight:300;line-height:1.65;word-break:keep-all;}
 .opt input:checked ~ .opt-mark ~ .opt-txt{color:var(--ink);font-weight:500;}
 .opt.you input:checked ~ .opt-mark ~ .opt-txt{color:var(--ink-mid);}
- 
 .custom-inp{margin-top:14px;width:100%;font-size:11px;font-family:'Space Grotesk','Noto Sans KR',sans-serif;padding:8px 0;border:none;border-bottom:1px solid var(--ink-light);background:transparent;color:var(--ink);outline:none;letter-spacing:.02em;font-weight:300;}
 .custom-inp::placeholder{color:var(--ink-faint);letter-spacing:.06em;font-size:10px;text-transform:uppercase;}
 .custom-inp:focus{border-bottom-color:var(--red);border-bottom-width:2px;padding-bottom:7px;}
- 
 .sub-row{display:flex;justify-content:space-between;align-items:center;padding:2.2rem var(--pad-x) 3rem;border-top:var(--line);gap:1.5rem;background:var(--cream);}
- 
+
 /* ════════════════════════════════════════
-   PROFILE POSTER
+   PROFILE PAGE WRAPPER
 ════════════════════════════════════════ */
-.profile-wrap{max-width:600px;margin:0 auto;padding:2.4rem 1.6rem 4rem;background:var(--paper);}
-.profile-nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.4rem;border-bottom:var(--line);margin-bottom:2rem;}
+.profile-wrap{margin:0 auto;padding:2.4rem 1.6rem 4rem;background:var(--paper);}
+.profile-wrap.vertical-mode{max-width:600px;}
+.profile-wrap.horizontal-mode{max-width:1000px;}
+
+.profile-nav{display:flex;align-items:center;justify-content:space-between;padding-bottom:1.4rem;border-bottom:var(--line);margin-bottom:1.6rem;}
 .profile-nav-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--red);letter-spacing:.02em;font-style:italic;}
+
+/* ════════════════════════════════════════
+   LAYOUT TOGGLE
+════════════════════════════════════════ */
+.layout-toggle{display:flex;gap:0;margin-bottom:1.8rem;border:var(--line);overflow:hidden;width:fit-content;}
+.layout-btn{font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:10px 22px;cursor:pointer;border:none;background:var(--cream);color:var(--ink-light);transition:background .15s,color .15s;position:relative;}
+.layout-btn:first-child{border-right:var(--line);}
+.layout-btn.active{background:var(--ink);color:var(--cream);}
+.layout-btn:not(.active):hover{background:var(--cream-dark);color:var(--ink);}
+.layout-icon{display:inline-block;margin-right:7px;vertical-align:middle;position:relative;top:-1px;}
+
+/* ════════════════════════════════════════
+   SHARED POSTER ELEMENTS
+════════════════════════════════════════ */
 .poster{background:var(--cream);color:var(--ink);border:var(--line);position:relative;}
 .poster-inner{position:relative;}
 .poster-stripe{background:var(--ink);padding:.55rem 1.6rem;display:flex;align-items:center;justify-content:space-between;}
 .poster-stripe-brand{font-family:'DM Serif Display',serif;font-size:11px;letter-spacing:.2em;color:var(--red);font-style:italic;}
 .poster-stripe-ver{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.18em;color:#555;font-weight:400;}
-.poster-hero{display:grid;grid-template-columns:1fr auto;padding:1.8rem 1.6rem 1.4rem;border-bottom:4px solid var(--ink);gap:1rem;align-items:flex-end;}
-.poster-title{font-family:'DM Serif Display',serif;font-size:clamp(38px,9vw,58px);color:var(--ink);line-height:.88;letter-spacing:-.03em;margin-bottom:.4rem;}
-.poster-title .r{color:var(--red);}
-.poster-title .it{font-style:italic;}
 .poster-sub{font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-light);margin-bottom:.9rem;}
 .poster-meta-line{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
 .poster-meta-tag{font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.14em;color:var(--ink-light);display:flex;align-items:center;gap:5px;}
-.poster-meta-dot{width:4px;height:4px;background:var(--red);display:inline-block;}
-.poster-gih{font-family:'DM Serif Display',serif;font-size:clamp(64px,12vw,88px);line-height:.82;color:var(--cream-dark);letter-spacing:-.04em;text-align:right;user-select:none;}
-.poster-sec{padding:1.4rem 1.6rem 0;}
-.poster-sec-hd{display:flex;align-items:center;gap:8px;margin-bottom:1rem;padding-bottom:6px;border-bottom:2px solid var(--ink);}
+.poster-meta-dot{width:4px;height:4px;background:var(--red);display:inline-block;flex-shrink:0;}
+.poster-rule{height:1px;background:repeating-linear-gradient(90deg,var(--ink-light) 0,var(--ink-light) 3px,transparent 3px,transparent 8px);opacity:.35;}
+.poster-sec-hd{display:flex;align-items:center;gap:8px;margin-bottom:.9rem;padding-bottom:6px;border-bottom:2px solid var(--ink);}
 .poster-sec-bar{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--ink);}
 .poster-sec-bar.red{color:var(--red);}
-.p-item{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid #E5E3DD;}
+.p-item{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px solid #E5E3DD;}
 .p-item:last-child{border-bottom:none;}
 .p-key{font-family:'Space Grotesk',sans-serif;font-size:8px;color:#BDBAB2;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
 .p-vals{display:flex;flex-wrap:wrap;gap:4px;}
@@ -206,17 +193,59 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .p-tag.me{background:var(--ink);color:var(--cream);}
 .p-tag.you{background:var(--red);color:var(--cream);}
 .p-tag.empty{color:#BDBAB2;font-weight:300;font-style:italic;background:none;padding:0;}
-.poster-rule{height:1px;background:repeating-linear-gradient(90deg,var(--ink-light) 0,var(--ink-light) 3px,transparent 3px,transparent 8px);margin:1.4rem 1.6rem;opacity:.35;}
-.poster-footer{display:grid;grid-template-columns:1fr 1fr;border-top:4px solid var(--ink);margin-top:1.2rem;}
-.poster-footer-cell{padding:1rem 1.6rem;display:flex;align-items:center;}
-.poster-footer-cell:first-child{border-right:var(--line);}
+
+/* ════════════════════════════════════════
+   VERTICAL POSTER
+════════════════════════════════════════ */
+#poster-vertical{display:block;}
+.poster-v-hero{display:grid;grid-template-columns:1fr auto;padding:1.8rem 1.6rem 1.4rem;border-bottom:4px solid var(--ink);gap:1rem;align-items:flex-end;}
+.poster-v-title{font-family:'DM Serif Display',serif;font-size:clamp(38px,9vw,58px);color:var(--ink);line-height:.88;letter-spacing:-.03em;margin-bottom:.4rem;}
+.poster-v-title .r{color:var(--red);}
+.poster-v-title .it{font-style:italic;}
+.poster-v-gih{font-family:'DM Serif Display',serif;font-size:clamp(64px,12vw,88px);line-height:.82;color:var(--cream-dark);letter-spacing:-.04em;text-align:right;user-select:none;}
+.poster-v-sec{padding:1.4rem 1.6rem 0;}
+.poster-v-rule{margin:1.2rem 1.6rem;}
+.poster-v-footer{display:grid;grid-template-columns:1fr 1fr;border-top:4px solid var(--ink);margin-top:1.2rem;}
+.poster-v-footer-cell{padding:1rem 1.6rem;display:flex;align-items:center;}
+.poster-v-footer-cell:first-child{border-right:var(--line);}
 .poster-footer-brand{font-family:'DM Serif Display',serif;font-size:14px;color:var(--ink-mid);font-style:italic;}
 .poster-footer-date{font-family:'Space Grotesk',sans-serif;font-size:8px;color:var(--ink-light);letter-spacing:.14em;font-weight:400;text-align:right;width:100%;}
-.save-btn{width:100%;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:16px;background:var(--ink);color:var(--cream);border:none;cursor:pointer;transition:background .15s;}
+.poster-v-sec-last{padding-bottom:1.4rem;}
+
+/* ════════════════════════════════════════
+   HORIZONTAL POSTER
+════════════════════════════════════════ */
+#poster-horizontal{display:none;}
+.poster-h-hero{display:grid;grid-template-columns:1fr auto 1fr;padding:1.6rem 1.8rem 1.3rem;border-bottom:4px solid var(--ink);gap:1.2rem;align-items:center;}
+.poster-h-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,44px);color:var(--ink);line-height:.88;letter-spacing:-.03em;}
+.poster-h-title .r{color:var(--red);}
+.poster-h-title .it{font-style:italic;}
+.poster-h-center{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.poster-h-gih{font-family:'DM Serif Display',serif;font-size:clamp(56px,8vw,80px);line-height:.82;color:var(--cream-dark);letter-spacing:-.04em;user-select:none;text-align:center;}
+.poster-h-sub{font-family:'Space Grotesk',sans-serif;font-size:7px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);text-align:center;white-space:nowrap;}
+.poster-h-meta{display:flex;flex-direction:column;gap:.3rem;align-items:flex-end;}
+.poster-h-body{display:grid;grid-template-columns:1fr 1fr;}
+.poster-h-col{padding:1.4rem 1.8rem;}
+.poster-h-col:first-child{border-right:var(--line);}
+.poster-h-col-hd{display:flex;align-items:center;gap:8px;margin-bottom:.9rem;padding-bottom:6px;border-bottom:2px solid var(--ink);}
+.poster-h-col-hd.you-hd{border-color:var(--red);}
+.poster-h-col-bar{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--ink);}
+.poster-h-col-bar.red{color:var(--red);}
+.poster-h-footer{display:grid;grid-template-columns:1fr 1fr;border-top:4px solid var(--ink);}
+.poster-h-footer-cell{padding:.85rem 1.8rem;display:flex;align-items:center;}
+.poster-h-footer-cell:first-child{border-right:var(--line);}
+.h-p-item{display:grid;grid-template-columns:66px 1fr;gap:8px;align-items:baseline;padding:4px 0;border-bottom:1px solid #E5E3DD;}
+.h-p-item:last-child{border-bottom:none;}
+
+/* ════════════════════════════════════════
+   SAVE AREA
+════════════════════════════════════════ */
+.save-area{margin-top:1.4rem;display:flex;gap:.8rem;}
+.save-btn{flex:1;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:16px;background:var(--ink);color:var(--cream);border:none;cursor:pointer;transition:background .15s;}
 .save-btn:hover{background:var(--red);}
 .save-btn:active{opacity:.9;}
 .save-btn:disabled{opacity:.4;cursor:not-allowed;}
- 
+
 /* ════════════════════════════════════════
    SNS FOOTER
 ════════════════════════════════════════ */
@@ -231,7 +260,7 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
 .sns-glyph{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:var(--line);font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--red);flex-shrink:0;}
 .sns-kind{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);}
 .sns-id{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-size:11px;color:var(--ink-mid);font-weight:400;line-height:1.45;word-break:break-all;}
- 
+
 /* ════════════════════════════════════════
    MOBILE
 ════════════════════════════════════════ */
@@ -250,13 +279,17 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
   .sns-footer-grid{grid-template-columns:1fr;}
   .sns-cell{border-right:none;border-bottom:var(--line);}
   .sns-cell:last-child{border-bottom:none;}
-  /* topbar on mobile: just logo + progress + pct */
   .prog-count{display:none;}
+  .poster-h-hero{grid-template-columns:1fr;text-align:center;}
+  .poster-h-meta{align-items:center;}
+  .poster-h-body{grid-template-columns:1fr;}
+  .poster-h-col:first-child{border-right:none;border-bottom:var(--line);}
+  .save-area{flex-direction:column;}
 }
 </style>
 </head>
 <body>
- 
+
 <!-- ════ LANDING ════ -->
 <div class="page active" id="pg-land">
 <div class="shell">
@@ -345,16 +378,15 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
   </footer>
 </div>
 </div>
- 
+
 <!-- ════ SURVEY ════ -->
 <div class="page" id="pg-survey">
 <div class="shell">
   <div class="s-topbar">
     <span class="s-logo">GiH</span>
-    <!-- progress bar + counts in one flex group -->
     <div class="prog-wrap">
       <div class="prog-track"><div class="prog-bar" id="prog"></div></div>
-      <span class="prog-count" id="prog-count"><span class="answered" id="prog-done">0</span> / 26</span>
+      <span class="prog-count" id="prog-count"><span class="answered" id="prog-done">0</span> / 30</span>
     </div>
     <span class="prog-num" id="prog-pct">0%</span>
     <button class="btn btn-outline-inv" onclick="go('pg-land')" style="padding:7px 14px;font-size:9px;">← 뒤로</button>
@@ -365,12 +397,12 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
       <div class="s-title">성소수자 여성<br>이상형 표</div>
       <div class="s-desc">해당하는 항목을 모두 선택해 주세요.<br>복수 선택 · 직접 입력 가능합니다.<br><br>
         <span style="font-size:10px;letter-spacing:.06em;color:var(--ink-faint);">
-          — 나에 대한 항목(13) + 원하는 상대 항목(13) = 총 26칸
+          — 나에 대한 항목(15) + 원하는 상대 항목(15) = 총 30칸
         </span>
       </div>
     </div>
     <div class="s-head-right">
-      <div class="s-big-num">13</div>
+      <div class="s-big-num">15</div>
       <div class="s-big-label">문항</div>
     </div>
   </div>
@@ -404,48 +436,117 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
   </footer>
 </div>
 </div>
- 
+
 <!-- ════ PROFILE ════ -->
 <div class="page" id="pg-profile">
-<div class="profile-wrap">
+<div class="profile-wrap vertical-mode" id="profile-wrap">
+
+  <!-- NAV -->
   <div class="profile-nav">
     <span class="profile-nav-logo">Girl in Hell</span>
     <button class="btn btn-outline" onclick="go('pg-survey')" style="padding:7px 16px;font-size:9px;">← 다시 작성</button>
   </div>
-  <div class="poster" id="poster">
-  <div class="poster-inner">
-    <div class="poster-stripe">
-      <span class="poster-stripe-brand">Girl in Hell ®</span>
-      <span class="poster-stripe-ver">2026 간단 ver.</span>
+
+  <!-- LAYOUT TOGGLE -->
+  <div class="layout-toggle">
+    <button class="layout-btn active" id="btn-vertical" onclick="setLayout('vertical')">
+      <svg class="layout-icon" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="12" height="14" rx="0" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="1" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      세로형
+    </button>
+    <button class="layout-btn" id="btn-horizontal" onclick="setLayout('horizontal')">
+      <svg class="layout-icon" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="14" height="12" rx="0" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="8" y1="1" x2="8" y2="13" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      가로형
+    </button>
+  </div>
+
+  <!-- ════ VERTICAL POSTER ════ -->
+  <div class="poster" id="poster-vertical">
+    <div class="poster-inner">
+      <div class="poster-stripe">
+        <span class="poster-stripe-brand">Girl in Hell ®</span>
+        <span class="poster-stripe-ver">2026 간단 ver.</span>
+      </div>
+      <div class="poster-v-hero">
+        <div>
+          <div class="poster-v-title">GIRL<br><span class="it r">IN</span><br>HELL</div>
+          <div class="poster-sub">성소수자 여성 이상형 표</div>
+          <div class="poster-meta-line">
+            <span class="poster-meta-tag"><span class="poster-meta-dot"></span>girl-in-hell.com</span>
+            <span class="poster-meta-tag"><span class="poster-meta-dot"></span><span id="v-date">—</span></span>
+          </div>
+        </div>
+        <div class="poster-v-gih">GiH</div>
+      </div>
+      <div class="poster-v-sec">
+        <div class="poster-sec-hd"><span class="poster-sec-bar red">저는 이런 사람이에요</span></div>
+        <div id="v-me-list"></div>
+      </div>
+      <div class="poster-v-rule poster-rule"></div>
+      <div class="poster-v-sec poster-v-sec-last">
+        <div class="poster-sec-hd"><span class="poster-sec-bar">이런 사람을 선호해요</span></div>
+        <div id="v-you-list"></div>
+      </div>
+      <div class="poster-v-footer">
+        <div class="poster-v-footer-cell"><span class="poster-footer-brand">걸인헬 — GiH</span></div>
+        <div class="poster-v-footer-cell"><span class="poster-footer-date" id="v-date2">—</span></div>
+      </div>
     </div>
-    <div class="poster-hero">
-      <div>
-        <div class="poster-title">GIRL<br><span class="it r">IN</span><br>HELL</div>
-        <div class="poster-sub">성소수자 여성 이상형 표</div>
-        <div class="poster-meta-line">
+  </div>
+
+  <!-- ════ HORIZONTAL POSTER ════ -->
+  <div class="poster" id="poster-horizontal">
+    <div class="poster-inner">
+      <div class="poster-stripe">
+        <span class="poster-stripe-brand">Girl in Hell ®</span>
+        <span class="poster-stripe-ver">2026 간단 ver.</span>
+      </div>
+      <div class="poster-h-hero">
+        <div>
+          <div class="poster-h-title">GIRL <span class="it r">IN</span> HELL</div>
+        </div>
+        <div class="poster-h-center">
+          <div class="poster-h-gih">GiH</div>
+          <div class="poster-h-sub">성소수자 여성 이상형 표</div>
+        </div>
+        <div class="poster-h-meta">
           <span class="poster-meta-tag"><span class="poster-meta-dot"></span>girl-in-hell.com</span>
-          <span class="poster-meta-tag"><span class="poster-meta-dot"></span><span id="p-date">—</span></span>
+          <span class="poster-meta-tag"><span class="poster-meta-dot"></span><span id="h-date">—</span></span>
         </div>
       </div>
-      <div class="poster-gih">GiH</div>
-    </div>
-    <div class="poster-sec">
-      <div class="poster-sec-hd"><span class="poster-sec-bar red">저는 이런 사람이에요</span></div>
-      <div id="me-list"></div>
-    </div>
-    <div class="poster-rule"></div>
-    <div class="poster-sec" style="padding-bottom:1.4rem;">
-      <div class="poster-sec-hd"><span class="poster-sec-bar">이런 사람을 선호해요</span></div>
-      <div id="you-list"></div>
-    </div>
-    <div class="poster-footer">
-      <div class="poster-footer-cell"><span class="poster-footer-brand">걸인헬 — GiH</span></div>
-      <div class="poster-footer-cell"><span class="poster-footer-date" id="p-date2">—</span></div>
+      <!-- LEFT = 선호, RIGHT = 나 -->
+      <div class="poster-h-body">
+        <div class="poster-h-col">
+          <div class="poster-h-col-hd you-hd">
+            <span class="poster-h-col-bar red">이런 사람을 선호해요</span>
+          </div>
+          <div id="h-you-list"></div>
+        </div>
+        <div class="poster-h-col">
+          <div class="poster-h-col-hd">
+            <span class="poster-h-col-bar">저는 이런 사람이에요</span>
+          </div>
+          <div id="h-me-list"></div>
+        </div>
+      </div>
+      <div class="poster-h-footer">
+        <div class="poster-h-footer-cell"><span class="poster-footer-brand">걸인헬 — GiH</span></div>
+        <div class="poster-h-footer-cell"><span class="poster-footer-date" id="h-date2">—</span></div>
+      </div>
     </div>
   </div>
+
+  <!-- SAVE BUTTONS -->
+  <div class="save-area">
+    <button class="save-btn" id="save-btn" onclick="saveImage()">이미지로 저장하기 ↓</button>
   </div>
-  <button class="save-btn" id="save-btn" onclick="saveImage()">이미지로 저장하기 ↓</button>
-  <footer class="sns-footer">
+
+  <footer class="sns-footer" style="margin-top:2rem;">
     <div class="sns-footer-bar">
       <span class="sns-footer-title">Girl in Hell</span>
       <span class="sns-footer-tag">Contact &amp; SNS</span>
@@ -470,15 +571,21 @@ body{font-family:'Space Grotesk','Noto Sans KR',sans-serif;font-weight:400;font-
   </footer>
 </div>
 </div>
- 
+
 <script>
 /* ════════════════════════════════════════════════
-   QUESTION DATA
+   QUESTION DATA  (15문항)
 ════════════════════════════════════════════════ */
-const Qs=[
+const Qs = [
   {label:"나이 차이",
    me:["99살이 되어도 100살 언니를 찾으러","동갑만 만날래요","연하의 맛 tv. 오직 연하만","연상이 좋지만 상관 없어요","연하가 좋지만 상관 없어요","동갑 이상만요","동갑 이하만요","나이 차이가 많이 나지만 않으면 상관 없어요","사랑에 나이가 있나요"],
    you:["언니 소리 잘 하는 연하였으면","편한 동갑이었으면","제 언니가 되어주세요","연하지만 대들어 줘","설레는 동갑이 좋아","나이는 상관 없어하면 좋겠어요"]},
+  {label:"나이",
+   me:["10대","20대 초반","20대 중반","20대 후반","30대 초반","30대 중반","30대 후반","40대 이상"],
+   you:["10대","20대 초반","20대 중반","20대 후반","30대 초반","30대 중반","30대 후반","40대 이상","상관 없어요"]},
+  {label:"키",
+   me:["150cm 아래","150cm 초반","150cm 중반","150cm 후반","160cm 초반","160cm 중반","160cm 후반","170cm 이상"],
+   you:["150cm 아래","150cm 초반","150cm 중반","150cm 후반","160cm 초반","160cm 중반","160cm 후반","170cm 이상","상관 없어요"]},
   {label:"깁텍 성향",
    me:["온깁 (사랑은 주는 거니까)","깁앤텍 (바~로 이맛 아입니까)","온텍 (take도 재능이다.)","플라토닉","깁이 더 강해요","텍이 더 강해요","내 여자를 위해서라면 조율 가능"],
    you:["온깁 (사랑은 주는 거니까)","깁앤텍 (바~로 이맛 아입니까)","온텍 (take도 재능이다.)","플라토닉","깁이 더 강했으면","텍이 더 강했으면","내 여자를 위해서라면 조율 가능"]},
@@ -516,67 +623,49 @@ const Qs=[
    me:["빠른 오프가 좋아요","천천히 알아가봐요","연락하며 정해봐요","당장 오늘도 가능해요","상관 없어요"],
    you:["빠른 오프 원해요","연락하며 정해도 괜찮아요","상관 없어요","천천히 알아가봐요"]},
 ];
- 
+
 /* ════════════════════════════════════════════════
-   PROGRESS — 총 26칸 (13 me + 13 you)
-   각 (문항 × 사이드) 조합을 하나의 칸으로 취급.
-   그 칸에서 체크박스 1개 이상 OR 직접입력 → 완료.
-   완료된 칸 수 / 26 = 진행률
+   PROGRESS
 ════════════════════════════════════════════════ */
-const TOTAL_SLOTS = Qs.length * 2; // 13 × 2 = 26
- 
+const TOTAL_SLOTS = Qs.length * 2; // 15 × 2 = 30
 const allCbs = [];
 const customInps = [];
- 
+
 function updateProg() {
   let doneCount = 0;
- 
   Qs.forEach((q, i) => {
     ['me', 'you'].forEach(side => {
-      // 이 (문항 × 사이드)에 체크된 박스가 하나라도 있으면 완료
-      const hasCheck = allCbs.some(
-        c => c.dataset.q == i && c.dataset.side === side && c.checked
-      );
-      // 직접입력에 내용이 있어도 완료
-      const inp = customInps.find(
-        c => c.dataset.q == i && c.dataset.side === side
-      );
+      const hasCheck = allCbs.some(c => c.dataset.q == i && c.dataset.side === side && c.checked);
+      const inp = customInps.find(c => c.dataset.q == i && c.dataset.side === side);
       const hasText = inp && inp.value.trim().length > 0;
- 
       if (hasCheck || hasText) doneCount++;
- 
-      // 문항 번호 색상 업데이트 (me + you 둘 다 완료 시 잉크색으로)
       if (side === 'you') {
         const meDone = allCbs.some(c => c.dataset.q == i && c.dataset.side === 'me' && c.checked)
           || (customInps.find(c => c.dataset.q == i && c.dataset.side === 'me')?.value.trim().length > 0);
         const youDone = hasCheck || hasText;
         const numEl = document.getElementById('qn-' + i);
-        if (numEl) {
-          numEl.classList.toggle('done', meDone && youDone);
-        }
+        if (numEl) numEl.classList.toggle('done', meDone && youDone);
       }
     });
   });
- 
   const pct = Math.round((doneCount / TOTAL_SLOTS) * 100);
   document.getElementById('prog').style.width = pct + '%';
   document.getElementById('prog-pct').textContent = pct + '%';
   document.getElementById('prog-done').textContent = doneCount;
 }
- 
+
 /* ════════════════════════════════════════════════
    BUILD SURVEY
 ════════════════════════════════════════════════ */
 const container = document.getElementById('qs');
- 
+
 Qs.forEach((q, i) => {
   const block = document.createElement('div');
   block.className = 'q-block';
- 
-  // header
+
   const head = document.createElement('div');
   head.className = 'q-head';
- 
+
   const nCell = document.createElement('div');
   nCell.className = 'q-n-cell';
   const nSpan = document.createElement('span');
@@ -584,20 +673,20 @@ Qs.forEach((q, i) => {
   nSpan.id = 'qn-' + i;
   nSpan.textContent = String(i + 1).padStart(2, '0');
   nCell.appendChild(nSpan);
- 
+
   const lbl = document.createElement('span');
   lbl.className = 'q-lbl';
   lbl.textContent = q.label;
- 
+
   const arr = document.createElement('span');
   arr.className = 'q-arr';
   arr.id = 'arr-' + i;
-  arr.textContent = '▼';
- 
+  arr.textContent = 'v';
+
   head.appendChild(nCell);
   head.appendChild(lbl);
   head.appendChild(arr);
- 
+
   head.addEventListener('click', () => {
     const body = document.getElementById('body-' + i);
     const a = document.getElementById('arr-' + i);
@@ -605,32 +694,31 @@ Qs.forEach((q, i) => {
     body.classList.toggle('open', !open);
     a.classList.toggle('open', !open);
   });
- 
-  // body
+
   const body = document.createElement('div');
   body.className = 'q-body';
   body.id = 'body-' + i;
   if (i === 0) { body.classList.add('open'); arr.classList.add('open'); }
- 
+
   const cols = document.createElement('div');
   cols.className = 'cols';
- 
+
   const mkCol = (opts, side) => {
     const wrap = document.createElement('div');
     wrap.className = 'col-wrap';
- 
+
     const colLbl = document.createElement('div');
     colLbl.className = 'col-lbl ' + (side === 'me' ? 'me' : 'you');
     colLbl.textContent = side === 'me' ? '저는 이런 사람이에요' : '이런 사람을 선호해요';
     wrap.appendChild(colLbl);
- 
+
     const list = document.createElement('div');
     list.className = 'opt-list';
- 
+
     opts.forEach(o => {
       const label = document.createElement('label');
       label.className = 'opt' + (side === 'you' ? ' you' : '');
- 
+
       const cb = document.createElement('input');
       cb.type = 'checkbox';
       cb.dataset.q = i;
@@ -638,23 +726,22 @@ Qs.forEach((q, i) => {
       cb.value = o;
       cb.addEventListener('change', updateProg);
       allCbs.push(cb);
- 
+
       const mark = document.createElement('span');
       mark.className = 'opt-mark';
- 
+
       const txt = document.createElement('span');
       txt.className = 'opt-txt';
       txt.textContent = o;
- 
+
       label.appendChild(cb);
       label.appendChild(mark);
       label.appendChild(txt);
       list.appendChild(label);
     });
- 
+
     wrap.appendChild(list);
- 
-    // direct text input
+
     const inp = document.createElement('input');
     inp.type = 'text';
     inp.className = 'custom-inp';
@@ -664,19 +751,18 @@ Qs.forEach((q, i) => {
     inp.addEventListener('input', updateProg);
     customInps.push(inp);
     wrap.appendChild(inp);
- 
+
     return wrap;
   };
- 
+
   cols.appendChild(mkCol(q.me, 'me'));
   cols.appendChild(mkCol(q.you, 'you'));
   body.appendChild(cols);
- 
   block.appendChild(head);
   block.appendChild(body);
   container.appendChild(block);
 });
- 
+
 /* ════════════════════════════════════════════════
    NAVIGATION
 ════════════════════════════════════════════════ */
@@ -685,16 +771,44 @@ function go(id) {
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
 }
- 
+
 /* ════════════════════════════════════════════════
-   SUBMIT → PROFILE CARD
+   LAYOUT TOGGLE
 ════════════════════════════════════════════════ */
-function submitSurvey() {
-  const meList = document.getElementById('me-list');
-  const youList = document.getElementById('you-list');
+let currentLayout = 'vertical';
+
+function setLayout(mode) {
+  currentLayout = mode;
+  const wrap = document.getElementById('profile-wrap');
+  const vPoster = document.getElementById('poster-vertical');
+  const hPoster = document.getElementById('poster-horizontal');
+  const btnV = document.getElementById('btn-vertical');
+  const btnH = document.getElementById('btn-horizontal');
+
+  if (mode === 'vertical') {
+    vPoster.style.display = 'block';
+    hPoster.style.display = 'none';
+    wrap.className = 'profile-wrap vertical-mode';
+    btnV.classList.add('active');
+    btnH.classList.remove('active');
+  } else {
+    vPoster.style.display = 'none';
+    hPoster.style.display = 'block';
+    wrap.className = 'profile-wrap horizontal-mode';
+    btnV.classList.remove('active');
+    btnH.classList.add('active');
+  }
+}
+
+/* ════════════════════════════════════════════════
+   BUILD POSTER ROWS  (shared helper)
+════════════════════════════════════════════════ */
+function buildRows(meListId, youListId, itemClass) {
+  const meList = document.getElementById(meListId);
+  const youList = document.getElementById(youListId);
   meList.innerHTML = '';
   youList.innerHTML = '';
- 
+
   Qs.forEach((q, i) => {
     let meVals = allCbs
       .filter(c => c.dataset.q == i && c.dataset.side === 'me' && c.checked)
@@ -702,15 +816,15 @@ function submitSurvey() {
     let youVals = allCbs
       .filter(c => c.dataset.q == i && c.dataset.side === 'you' && c.checked)
       .map(c => c.value);
- 
+
     const meC = customInps.find(c => c.dataset.q == i && c.dataset.side === 'me')?.value.trim();
     const youC = customInps.find(c => c.dataset.q == i && c.dataset.side === 'you')?.value.trim();
     if (meC) meVals = [...meVals, meC];
     if (youC) youVals = [...youVals, youC];
- 
+
     const mkRow = (vals, cls) => {
       const row = document.createElement('div');
-      row.className = 'p-item';
+      row.className = itemClass || 'p-item';
       const key = document.createElement('span');
       key.className = 'p-key';
       key.textContent = q.label;
@@ -733,18 +847,32 @@ function submitSurvey() {
       row.appendChild(wrap);
       return row;
     };
- 
+
     meList.appendChild(mkRow(meVals, 'me'));
     youList.appendChild(mkRow(youVals, 'you'));
   });
- 
+}
+
+/* ════════════════════════════════════════════════
+   SUBMIT
+════════════════════════════════════════════════ */
+function submitSurvey() {
   const now = new Date();
   const ds = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}`;
-  document.getElementById('p-date').textContent = ds;
-  document.getElementById('p-date2').textContent = ds;
+
+  // vertical
+  buildRows('v-me-list', 'v-you-list', 'p-item');
+  document.getElementById('v-date').textContent = ds;
+  document.getElementById('v-date2').textContent = ds;
+
+  // horizontal
+  buildRows('h-me-list', 'h-you-list', 'h-p-item p-item');
+  document.getElementById('h-date').textContent = ds;
+  document.getElementById('h-date2').textContent = ds;
+
   go('pg-profile');
 }
- 
+
 /* ════════════════════════════════════════════════
    SAVE IMAGE
 ════════════════════════════════════════════════ */
@@ -752,8 +880,13 @@ async function saveImage() {
   const btn = document.getElementById('save-btn');
   btn.textContent = '생성 중...';
   btn.disabled = true;
+
+  const isHorizontal = currentLayout === 'horizontal';
+  const el = isHorizontal
+    ? document.getElementById('poster-horizontal')
+    : document.getElementById('poster-vertical');
+
   try {
-    const el = document.getElementById('poster');
     const canvas = await html2canvas(el, {
       scale: 3,
       useCORS: true,
@@ -762,6 +895,10 @@ async function saveImage() {
       logging: false
     });
     const dataUrl = canvas.toDataURL('image/png');
+    const filename = isHorizontal
+      ? 'girl-in-hell-profile-horizontal.png'
+      : 'girl-in-hell-profile.png';
+
     const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
     if (isMobile) {
       const w = window.open();
@@ -773,13 +910,14 @@ async function saveImage() {
       );
     } else {
       const a = document.createElement('a');
-      a.download = 'girl-in-hell-profile.png';
+      a.download = filename;
       a.href = dataUrl;
       a.click();
     }
   } catch (e) {
     alert('저장에 실패했어요. 스크린샷을 이용해주세요.');
   }
+
   btn.textContent = '이미지로 저장하기 ↓';
   btn.disabled = false;
 }
